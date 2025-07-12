@@ -15,11 +15,18 @@
 # Note:
 # - Changes to this file take effect in new shell sessions or after running `source ~/.zshrc` in an existing shell.
 
-# echo filename so aware of running
-echo ".zshrc"
+# echo filename in interactive shell so aware when running
+[[ $- == *i* ]] && echo "[.zshrc loaded] 🎉"
 
 # Check if the home directory has the .my_secrets dot file and run contents if so
 test -f "$HOME/.my_secrets" && source "$HOME/.my_secrets"
 
+# Tab completion (usually not needed on Macs)
+autoload -Uz compinit
+compinit
+
 # Auto-suggestions plugin:
 source $HOME/.my_configs/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Syntax coloring plugin
+# MUST BE SOURCED LAST apparently
+source $HOME/.my_configs/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
