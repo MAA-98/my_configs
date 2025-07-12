@@ -15,6 +15,11 @@
 # Note:
 # - Changes to this file take effect in new shell sessions or after running `source ~/.zshrc` in an existing shell.
 
+# echo filename so aware of running
+echo ".zshrc"
 
 # Check if the home directory has the .my_secrets dot file and run contents if so
 test -f "$HOME/.my_secrets" && source "$HOME/.my_secrets"
+
+# Auto-suggestions plugin:
+source $HOME/.my_configs/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
